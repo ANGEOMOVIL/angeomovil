@@ -434,24 +434,99 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
 /* RESPONSIVE */
 @media(max-width:960px){
   #ticker-bar .ticker-item:nth-child(n+4){display:none;}
-  nav{padding:14px 20px;}
+  #ticker-bar{position:relative;height:28px;}
+  nav{padding:12px 16px;}
+  nav.with-ticker,nav.no-ticker{top:0;}
   .n-links{display:none;}
-  .wrap{padding:0 20px;}
-  .p2-layout,.p1-layout,.canal-inner,.zapping-layout,.bemovil-layout,.cont-layout,.faq-layout{grid-template-columns:1fr;gap:28px;}
-  .casas-grid,.gaming-grid,.extra-grid,.tec-grid,.trust-grid{grid-template-columns:1fr;}
-  .tec-cta{flex-direction:column;}
-  .bingo-btns{grid-template-columns:1fr;}
+  .wrap{padding:0 16px;}
+  .sec-pad{padding-top:72px;padding-bottom:72px;}
+
+  /* HERO */
+  .h-inner{padding:0 16px;}
+  .h-logo{width:80px;height:80px;}
+  .h-title{font-size:2.6rem;letter-spacing:-1px;}
+  .h-sub{font-size:.85rem;}
+  .h-btns{flex-direction:column;align-items:center;}
+  .h-btns .btn-gold,.h-btns .btn-outline{width:100%;justify-content:center;text-align:center;}
+  .h-stats{grid-template-columns:1fr 1fr;max-width:100%;margin-top:36px;}
+  .h-st{padding:14px 8px;}
+  .h-st-n{font-size:1.4rem;}
+
+  /* ANGEOBET */
+  .p2-layout{grid-template-columns:1fr;gap:24px;}
+  .casas-grid{grid-template-columns:1fr;}
+  .casa-card{padding:20px 16px;}
+  .casa-btns{gap:8px;}
+  .bingo-btns{grid-template-columns:1fr;gap:8px;}
+  .sport-widget{}
+  .match-card{padding:10px 14px;}
+  .match-score{font-size:1.2rem;}
+
+  /* CANAL WA */
+  .canal-inner{grid-template-columns:1fr;gap:24px;}
+  .canal-stats{grid-template-columns:1fr 1fr;}
+
+  /* STREAMING */
+  .p1-layout{grid-template-columns:1fr;gap:24px;}
+  .p1-sticky{position:static;}
+  .plat-grid{grid-template-columns:repeat(3,1fr);}
+  .gaming-grid{grid-template-columns:1fr 1fr;}
+  .p1-block{margin-bottom:24px;}
+
+  /* EXTRA SERVICES */
+  .extra-grid{grid-template-columns:1fr;}
+  .extra-card{padding:28px 20px;}
+
+  /* ZAPPING */
+  .zapping-layout{grid-template-columns:1fr;gap:24px;}
+  .zapping-platforms{grid-template-columns:repeat(3,1fr);}
+
+  /* BEMOVIL */
+  .bemovil-layout{grid-template-columns:1fr;gap:24px;}
+  .bem-logos-grid{grid-template-columns:repeat(4,1fr);}
+
+  /* TECNICO */
+  .tec-grid{grid-template-columns:1fr;}
+  .tec-card{padding:24px 20px;}
+  .tec-cta{flex-direction:column;gap:16px;padding:24px 20px;}
+  .tec-cta h3{font-size:1.2rem;}
+
+  /* TRUST */
+  .trust-grid{grid-template-columns:1fr 1fr;}
+  .trust-cell{padding:24px 16px;}
   .stats-strip{grid-template-columns:1fr 1fr;}
-  .foot-top{grid-template-columns:1fr;gap:28px;}
+  .stat-cell{padding:28px 16px;}
+  .stat-n{font-size:2rem;}
+
+  /* CONTACT */
+  .cont-layout{grid-template-columns:1fr;gap:24px;}
+
+  /* FAQ */
+  .faq-layout{grid-template-columns:1fr;gap:24px;}
+  .faq-left{position:static;}
+
+  /* FOOTER */
+  .foot-top{grid-template-columns:1fr;gap:24px;}
+  .foot-wrap{padding:40px 16px 20px;}
+
+  /* SECTION TITLES */
+  .sec-title{font-size:1.8rem;}
+  .p2-title{font-size:2.2rem;letter-spacing:-1px;}
+  .p1-title{font-size:1.8rem;}
+  .bemovil-title,.zapping-title,.cont-title,.faq-left-title{font-size:1.8rem;}
+}
+
+@media(max-width:480px){
+  .h-title{font-size:2rem;}
   .h-stats{grid-template-columns:1fr 1fr;}
   .plat-grid{grid-template-columns:1fr 1fr;}
-  .gaming-grid{grid-template-columns:1fr 1fr;}
-  .bem-logos-grid{grid-template-columns:repeat(3,1fr);}
+  .bem-logos-grid{grid-template-columns:repeat(2,1fr);}
+  .trust-grid{grid-template-columns:1fr;}
+  .stats-strip{grid-template-columns:1fr 1fr;}
   .canal-stats{grid-template-columns:1fr;}
-  .p1-sticky{position:static;}
-  .faq-left{position:static;}
-  nav.with-ticker,nav.no-ticker{top:0;}
-  #ticker-bar{position:relative;}
+  .bingo-btns{grid-template-columns:1fr;}
+  .casa-btns{gap:6px;}
+  .zapping-platforms{grid-template-columns:1fr 1fr;}
 }
 </style>
 </head>
@@ -788,9 +863,9 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
       <div class="rv-r">
         <div class="p1-block-label" style="margin-bottom:14px;font-size:.55rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(212,175,55,.07);font-family:'Montserrat',sans-serif;">Plataformas incluidas</div>
         <div class="zapping-platforms">
-          <div class="zap-item" onclick="openModal('iptv')"><div class="zap-logo">Canal<br>Fútbol</div><span class="zap-name">Canal del Fútbol</span></div>
-          <div class="zap-item" onclick="openModal('iptv')"><div class="zap-logo">Magis<br>TV</div><span class="zap-name">MagisTV</span></div>
-          <div class="zap-item" onclick="openModal('iptv')"><div class="zap-logo">DirecTV<br>GO</div><span class="zap-name">DirecTV GO</span></div>
+          <div class="zap-item" onclick="openModal('iptv')"><div class="zap-logo" style="padding:0;overflow:hidden;"><img src="img/canalfutbol.png" alt="Canal del Fútbol" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"></div><span class="zap-name">Canal del Fútbol</span></div>
+          <div class="zap-item" onclick="openModal('iptv')"><div class="zap-logo" style="padding:0;overflow:hidden;"><img src="img/magistv.png" alt="MagisTV" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"></div><span class="zap-name">MagisTV</span></div>
+          <div class="zap-item" onclick="openModal('iptv')"><div class="zap-logo" style="padding:0;overflow:hidden;"><img src="img/directvgo.png" alt="DirecTV GO" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"></div><span class="zap-name">DirecTV GO</span></div>
         </div>
       </div>
     </div>
@@ -833,9 +908,9 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
         <div class="bem-logos-section">
           <div class="bem-logos-label">Bancos y pagos</div>
           <div class="bem-logos-grid">
-            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="img/pichincha.png" alt="Banco Pichincha" style="filter:hue-rotate(200deg);"></div><span class="bem-logo-name">B. Pichincha</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="img/guayaquil.png" alt="Banco Guayaquil" style="filter:hue-rotate(100deg);"></div><span class="bem-logo-name">B. Guayaquil</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/paypal/003087" alt="Deuna"></div><span class="bem-logo-name">Deuna</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="img/pichincha.png" alt="Banco Pichincha"></div><span class="bem-logo-name">B. Pichincha</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="img/guayaquil.png" alt="Banco Guayaquil"></div><span class="bem-logo-name">B. Guayaquil</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="img/deuna.png" alt="Deuna"></div><span class="bem-logo-name">Deuna</span></div>
             <div class="bem-logo-item"><div class="bem-logo-ph"><img src="img/produbanco.png" alt="Produbanco" style="filter:hue-rotate(320deg);"></div><span class="bem-logo-name">Produbanco</span></div>
           </div>
         </div>
