@@ -145,7 +145,7 @@ section{position:relative;z-index:1;}
 .casa-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .5s;}
 .casa-card:hover::after{transform:scaleX(1);}
 .casa-card:hover{background:rgba(212,175,55,.035);border-color:rgba(212,175,55,.18);transform:translateY(-2px);}
-.casa-logo{width:100%;height:48px;background:rgba(255,255,255,.04);border:1px dashed rgba(212,175,55,.18);display:flex;align-items:center;justify-content:center;font-size:.5rem;letter-spacing:2px;color:rgba(212,175,55,.35);text-transform:uppercase;margin-bottom:16px;border-radius:3px;}
+.casa-logo{width:100%;height:48px;background:rgba(255,255,255,.04);border:1px dashed rgba(212,175,55,.18);display:flex;align-items:center;justify-content:center;font-size:.5rem;letter-spacing:2px;color:rgba(212,175,55,.35);text-transform:uppercase;margin-bottom:16px;border-radius:3px;overflow:hidden;padding:6px;} .casa-logo img{max-height:36px;max-width:100%;object-fit:contain;}
 .casa-name{font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:700;color:var(--gold);margin-bottom:5px;}
 .casa-desc{font-size:.75rem;color:var(--gray);line-height:1.6;margin-bottom:12px;}
 .casa-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
@@ -156,7 +156,7 @@ section{position:relative;z-index:1;}
 .bingo-card{background:rgba(255,255,255,.025);border:1px solid rgba(212,175,55,.12);padding:24px 20px;position:relative;overflow:hidden;}
 .bingo-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .bingo-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
-.bingo-logo{width:48px;height:48px;background:rgba(255,255,255,.04);border:1px dashed rgba(212,175,55,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.45rem;letter-spacing:1px;color:rgba(212,175,55,.35);text-align:center;line-height:1.3;text-transform:uppercase;flex-shrink:0;}
+.bingo-logo{width:48px;height:48px;background:rgba(255,255,255,.04);border:1px dashed rgba(212,175,55,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.45rem;letter-spacing:1px;color:rgba(212,175,55,.35);text-align:center;line-height:1.3;text-transform:uppercase;flex-shrink:0;overflow:hidden;padding:4px;} .bingo-logo img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
 .bingo-head-info h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:var(--gold);}
 .bingo-head-info span{font-size:.6rem;color:var(--gray);letter-spacing:2px;text-transform:uppercase;font-family:'Montserrat',sans-serif;}
 .bingo-desc{font-size:.75rem;color:var(--gray);line-height:1.6;margin-bottom:12px;}
@@ -231,7 +231,7 @@ section{position:relative;z-index:1;}
 .plat-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s;}
 .plat-item:hover::after{transform:scaleX(1);}
 .plat-item:hover{background:rgba(212,175,55,.04);}
-.plat-logo{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:.45rem;letter-spacing:.5px;color:var(--gray);text-transform:uppercase;text-align:center;line-height:1.3;transition:border-color .3s;}
+.plat-logo{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:.45rem;letter-spacing:.5px;color:var(--gray);text-transform:uppercase;text-align:center;line-height:1.3;transition:border-color .3s;overflow:hidden;padding:4px;} .plat-logo img{width:100%;height:100%;object-fit:contain;border-radius:6px;}
 .plat-item:hover .plat-logo{border-color:rgba(212,175,55,.35);}
 .plat-name{font-size:.65rem;color:rgba(255,255,255,.5);text-align:center;transition:color .3s;}
 .plat-item:hover .plat-name{color:var(--white);}
@@ -293,7 +293,7 @@ section{position:relative;z-index:1;}
 .bem-logos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.04);}
 .bem-logo-item{background:var(--black);padding:16px 10px;display:flex;flex-direction:column;align-items:center;gap:7px;transition:all .3s;}
 .bem-logo-item:hover{background:rgba(212,175,55,.03);}
-.bem-logo-ph{width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:.42rem;color:var(--gray);text-transform:uppercase;text-align:center;line-height:1.3;transition:border-color .3s;}
+.bem-logo-ph{width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:.42rem;color:var(--gray);text-transform:uppercase;text-align:center;line-height:1.3;transition:border-color .3s;overflow:hidden;padding:4px;} .bem-logo-ph img{width:100%;height:100%;object-fit:contain;border-radius:4px;}
 .bem-logo-item:hover .bem-logo-ph{border-color:rgba(212,175,55,.3);}
 .bem-logo-name{font-size:.62rem;color:rgba(255,255,255,.45);text-align:center;}
 .bem-highlight{background:rgba(212,175,55,.04);border:1px solid rgba(212,175,55,.12);padding:24px;border-radius:3px;margin-bottom:24px;}
@@ -556,7 +556,7 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
         <div class="casas-label">Casas de Apuestas</div>
         <div class="casas-grid">
           <div class="casa-card">
-            <div class="casa-logo">Logo Ecuabet</div>
+            <div class="casa-logo"><img src="https://cdn.simpleicons.org/googleplay/D4AF37" alt="Ecuabet" style="filter:hue-rotate(30deg) brightness(1.2);">Ecuabet</div>
             <div class="casa-name">Ecuabet</div>
             <p class="casa-desc">Plataforma líder en Ecuador. Gestión de recargas, retiros y registro de nuevos usuarios.</p>
             <div class="casa-tags"><span class="casa-tag">Recargas</span><span class="casa-tag">Retiros</span><span class="casa-tag">Registro</span></div>
@@ -566,7 +566,7 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
             </div>
           </div>
           <div class="casa-card">
-            <div class="casa-logo">Logo Mas1x2</div>
+            <div class="casa-logo"><img src="https://cdn.simpleicons.org/bet365/027B5B" alt="Mas1x2">Mas1x2</div>
             <div class="casa-name">Mas1x2</div>
             <p class="casa-desc">Pronósticos deportivos y apuestas en vivo. Los mejores mercados internacionales.</p>
             <div class="casa-tags"><span class="casa-tag">Recargas</span><span class="casa-tag">Retiros</span><span class="casa-tag">Registro</span></div>
@@ -579,7 +579,7 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
         <!-- BINGO -->
         <div class="bingo-card">
           <div class="bingo-head">
-            <div class="bingo-logo">Logo<br>Bingo</div>
+            <div class="bingo-logo"><img src="https://cdn.simpleicons.org/googleplay/D4AF37" alt="Bingo"></div>
             <div class="bingo-head-info">
               <h3>Bingo 593</h3>
               <span>Sorteos Virtuales</span>
@@ -710,15 +710,15 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
         <div class="p1-block">
           <div class="p1-block-label">Plataformas de Cine &amp; Series</div>
           <div class="plat-grid">
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Netflix</div><span class="plat-name">Netflix</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Disney+</div><span class="plat-name">Disney+</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Prime Video</div><span class="plat-name">Prime Video</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Spotify</div><span class="plat-name">Spotify</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Canva Pro</div><span class="plat-name">Canva Pro</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Crunchyroll</div><span class="plat-name">Crunchyroll</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Max HBO</div><span class="plat-name">Max HBO</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">Apple TV</div><span class="plat-name">Apple TV</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo">YouTube Premium</div><span class="plat-name">YouTube Premium</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix"></div><span class="plat-name">Netflix</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/disneyplus/113CCF" alt="Disney+"></div><span class="plat-name">Disney+</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/primevideo/00A8E0" alt="Prime Video"></div><span class="plat-name">Prime Video</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/spotify/1ED760" alt="Spotify"></div><span class="plat-name">Spotify</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva Pro"></div><span class="plat-name">Canva Pro</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/crunchyroll/F47521" alt="Crunchyroll"></div><span class="plat-name">Crunchyroll</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/hbo/000000/ffffff" alt="Max HBO" style="background:#ffffff;border-radius:4px;padding:2px;"></div><span class="plat-name">Max HBO</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple TV"></div><span class="plat-name">Apple TV</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube Premium"></div><span class="plat-name">YouTube Premium</span></div>
           </div>
           <div class="p1-price"><span>Planes desde</span><strong>$3.00 USD / mes</strong></div>
         </div>
@@ -824,19 +824,19 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
         <div class="bem-logos-section">
           <div class="bem-logos-label">Operadoras disponibles</div>
           <div class="bem-logos-grid">
-            <div class="bem-logo-item"><div class="bem-logo-ph">Claro</div><span class="bem-logo-name">Claro</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph">Movistar</div><span class="bem-logo-name">Movistar</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph">Tuenti</div><span class="bem-logo-name">Tuenti</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph">CNT</div><span class="bem-logo-name">CNT</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/claro/DA291C" alt="Claro"></div><span class="bem-logo-name">Claro</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/movistar/019DF4" alt="Movistar"></div><span class="bem-logo-name">Movistar</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt="Tuenti" style="opacity:.8;"></div><span class="bem-logo-name">Tuenti</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/googlefiber/4285F4" alt="CNT" style="opacity:.8;"></div><span class="bem-logo-name">CNT</span></div>
           </div>
         </div>
         <div class="bem-logos-section">
           <div class="bem-logos-label">Bancos y pagos</div>
           <div class="bem-logos-grid">
-            <div class="bem-logo-item"><div class="bem-logo-ph">Pichincha</div><span class="bem-logo-name">B. Pichincha</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph">Guayaquil</div><span class="bem-logo-name">B. Guayaquil</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph">Deuna</div><span class="bem-logo-name">Deuna</span></div>
-            <div class="bem-logo-item"><div class="bem-logo-ph">Produbanco</div><span class="bem-logo-name">Produbanco</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/googleplay/D4AF37" alt="Banco Pichincha" style="filter:hue-rotate(200deg);"></div><span class="bem-logo-name">B. Pichincha</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/googleplay/D4AF37" alt="Banco Guayaquil" style="filter:hue-rotate(100deg);"></div><span class="bem-logo-name">B. Guayaquil</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/paypal/003087" alt="Deuna"></div><span class="bem-logo-name">Deuna</span></div>
+            <div class="bem-logo-item"><div class="bem-logo-ph"><img src="https://cdn.simpleicons.org/googleplay/D4AF37" alt="Produbanco" style="filter:hue-rotate(320deg);"></div><span class="bem-logo-name">Produbanco</span></div>
           </div>
         </div>
       </div>
