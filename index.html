@@ -1196,8 +1196,8 @@ const PROMO_MENSAJE = "BINGO SÁBADO 21:00 · ÚLTIMAS CARTOLAS";
 if(!TICKER_ACTIVO) document.getElementById('ticker-bar').classList.add('hidden');
 
 // ---- CONFIG FOOTBALL API ----
-const FOOTBALL_API_KEY = 'TU_API_KEY_AQUI'; // Reemplaza con tu key de football-data.org
-const USE_REAL_API = false; // Cambia a true cuando tengas el API key
+const FOOTBALL_API_KEY = '77ece74bf44a43b9aaa845a6b25f8703';
+const USE_REAL_API = true;
 
 // ---- CURSOR ----
 const cur=document.getElementById('cur'),curR=document.getElementById('curR');
@@ -1252,20 +1252,88 @@ function toggleFaq(btn){
 }
 
 // ---- FOOTBALL API ----
+// Competition IDs for football-data.org
+// 2001 = Champions League, 2018 = European Championship
+// 2021 = Premier League, 2014 = La Liga
+// Free tier competitions available
+const COMPETITIONS = [2001, 2021, 2014]; // Champions, Premier, La Liga
+
 async function fetchMatches(){
   if(!USE_REAL_API) return;
-  try{
-    // Liga Pro Ecuador
-    const r1=await fetch('https://api.football-data.org/v4/competitions/ECUADOR/matches?status=LIVE',{headers:{'X-Auth-Token':FOOTBALL_API_KEY}});
-    const d1=await r1.json();
-    if(d1.matches&&d1.matches.length>0){
-      const m=d1.matches[0];
-      document.getElementById('ms1').textContent=`${m.score.fullTime.home||0}—${m.score.fullTime.away||0}`;
+  try {
+    // Fetch today's matches from multiple competitions
+    const today = new Date().toISOString().split('T')[0];
+    const promises = COMPETITIONS.map(id =>
+      fetch(`https://api.football-data.org/v4/competitions/${id}/matches?dateFrom=${today}&dateTo=${today}`, {
+        headers: {'X-Auth-Token': FOOTBALL_API_KEY}
+      }).then(r => r.json()).catch(() => ({matches:[]}))
+    );
+    const results = await Promise.all(promises);
+    const allMatches = results.flatMap(r => r.matches || []);
+
+    // Separate live and finished matches
+    const liveMatches = allMatches.filter(m => m.status === 'IN_PLAY' || m.status === 'PAUSED');
+    const finishedMatches = allMatches.filter(m => m.status === 'FINISHED');
+    const scheduledMatches = allMatches.filter(m => m.status === 'TIMED' || m.status === 'SCHEDULED');
+
+    // Pick up to 3 matches to show (live first, then finished, then scheduled)
+    const toShow = [...liveMatches, ...finishedMatches, ...scheduledMatches].slice(0, 3);
+
+    if(toShow.length === 0) return; // Keep static data if no matches
+
+    const container = document.getElementById('matches-container');
+    if(!container) return;
+
+    // Update live indicator
+    const isLive = liveMatches.length > 0;
+    const liveEl = document.querySelector('.sw-live');
+    if(liveEl) liveEl.style.color = isLive ? '#ff3232' : '#666';
+
+    container.innerHTML = toShow.map(m => {
+      const home = m.homeTeam.shortName || m.homeTeam.name;
+      const away = m.awayTeam.shortName || m.awayTeam.name;
+      const homeScore = m.score.fullTime.home !== null ? m.score.fullTime.home : (m.score.halfTime.home || 0);
+      const awayScore = m.score.fullTime.away !== null ? m.score.fullTime.away : (m.score.halfTime.away || 0);
+      const isLiveMatch = m.status === 'IN_PLAY' || m.status === 'PAUSED';
+      const isFinished = m.status === 'FINISHED';
+      const comp = m.competition.name;
+      const timeLabel = isFinished ? 'FT' : isLiveMatch ? 'EN VIVO' : new Date(m.utcDate).toLocaleTimeString('es-EC',{hour:'2-digit',minute:'2-digit'});
+      const progress = isFinished ? 100 : isLiveMatch ? 55 : 0;
+
+      return `<div class="match-card">
+        <span class="match-comp">${comp}</span>
+        <span class="match-time-badge${isFinished?' ft':''}" style="${isLiveMatch?'color:#ff3232;background:rgba(255,50,50,.08);':''}">${timeLabel}</span>
+        <div class="match-row">
+          <div class="team"><div class="team-flag">${home.substring(0,3).toUpperCase()}</div><span class="team-name">${home}</span></div>
+          <span class="match-score">${homeScore}—${awayScore}</span>
+          <div class="team away"><div class="team-flag">${away.substring(0,3).toUpperCase()}</div><span class="team-name">${away}</span></div>
+        </div>
+        <div class="match-progress"><div class="match-progress-fill" style="width:${progress}%"></div></div>
+        <div class="match-info"><span>${isFinished?'Partido finalizado':isLiveMatch?'En curso':'Programado'}</span><span>${comp}</span></div>
+      </div>`;
+    }).join('');
+
+    // Update upcoming events
+    const upcomingEl = document.querySelector('.upcoming');
+    if(upcomingEl && scheduledMatches.length > 0) {
+      const upRows = scheduledMatches.slice(0,3).map(m => {
+        const time = new Date(m.utcDate).toLocaleString('es-EC',{weekday:'short',hour:'2-digit',minute:'2-digit'});
+        const home = m.homeTeam.shortName || m.homeTeam.name;
+        const away = m.awayTeam.shortName || m.awayTeam.name;
+        return `<div class="up-row"><span class="up-name">${home} vs ${away}</span><span class="up-time">${time}</span></div>`;
+      }).join('');
+      const upTitleEl = upcomingEl.querySelector('.up-title');
+      if(upTitleEl) upcomingEl.innerHTML = '<div class="up-title">Próximos Eventos</div>' + upRows;
     }
-  }catch(e){console.log('API no disponible, usando datos estáticos');}
+
+  } catch(e) {
+    console.log('Football API error:', e);
+  }
 }
+
+// Initial fetch and refresh every 60 seconds
 fetchMatches();
-setInterval(fetchMatches,60000);
+setInterval(fetchMatches, 60000);
 
 // ---- MODALS ----
 const MODALS={
