@@ -434,6 +434,9 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
 /* RESPONSIVE */
 @media(max-width:960px){
   #ticker-bar .ticker-item:nth-child(n+4){display:none;}
+  #banner-promo > div{grid-template-columns:1fr !important;text-align:center;gap:24px !important;}
+  #banner-promo > div > div:last-child{align-items:center;}
+  #pago-servicios [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr !important;}
   #ticker-bar{position:relative;height:28px;}
   nav{padding:12px 16px;}
   nav.with-ticker,nav.no-ticker{top:0;}
@@ -517,6 +520,7 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
 }
 
 @media(max-width:480px){
+  #pago-servicios .rv[style*="grid-template-columns"]{grid-template-columns:1fr !important;}
   .h-title{font-size:2rem;}
   .h-stats{grid-template-columns:1fr 1fr;}
   .plat-grid{grid-template-columns:1fr 1fr;}
@@ -571,7 +575,7 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
     <li><a href="#p1">Streaming</a></li>
     <li><a href="#zapping">Zapping Pro</a></li>
     <li><a href="#bemovil">Bemovil</a></li>
-    <li><a href="#tec">Soporte</a></li>
+    <li><a href="#pago-servicios">Servicios</a></li><li><a href="#tec">Soporte</a></li>
     <li><a href="#cont">Contacto</a></li>
   </ul>
   <a href="https://wa.me/593963114919?text=Hola%20Angeomovil" target="_blank" class="n-cta">Soporte WA</a>
@@ -607,6 +611,31 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
     </div>
   </div>
   <div class="h-scroll"><span>Scroll</span><div class="sc-line"></div></div>
+</section>
+
+<!-- BANNER PROMOCIONAL -->
+<section id="banner-promo" style="position:relative;z-index:1;background:linear-gradient(135deg,#0a0500 0%,#1a0a00 40%,#0d0d0d 100%);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);overflow:hidden;">
+  <div style="position:absolute;inset:0;pointer-events:none;">
+    <div style="position:absolute;top:-50%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(212,175,55,.08),transparent 60%);"></div>
+    <div style="position:absolute;bottom:-50%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,100,0,.05),transparent 60%);"></div>
+  </div>
+  <div style="max-width:1240px;margin:0 auto;padding:48px 40px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;z-index:2;">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--glow));color:#000;padding:4px 14px;border-radius:20px;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:14px;font-family:'Inter',sans-serif;">⚽ Mundial 2026 · Promo Especial</div>
+      <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;line-height:1.05;letter-spacing:-1px;margin-bottom:10px;">No te pierdas el <span style="background:linear-gradient(135deg,var(--gold),var(--glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Mundial 2026</span></h2>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:500px;margin-bottom:0;">Accede a Paramount+ y vive cada partido con la mejor calidad. Activación inmediata, soporte incluido y garantía de 30 días.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;flex-shrink:0;">
+      <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.15);padding:14px 20px;border-radius:4px;">
+        <div style="width:48px;height:48px;background:rgba(255,255,255,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.5rem;color:rgba(212,175,55,.6);letter-spacing:1px;text-transform:uppercase;text-align:center;line-height:1.3;">Paramount+</div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--gold);">Paramount+</div>
+          <div style="font-size:.7rem;color:rgba(255,255,255,.4);">Streaming oficial del Mundial</div>
+        </div>
+      </div>
+      <a href="https://wa.me/593963114919?text=Hola%20Angeomovil,%20quiero%20Paramount+%20para%20el%20Mundial%202026" target="_blank" style="background:linear-gradient(135deg,var(--gold),var(--glow));color:#000;border:none;padding:13px 28px;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;cursor:pointer;font-family:'Space Grotesk',sans-serif;text-decoration:none;display:block;text-align:center;border-radius:3px;transition:all .3s;white-space:nowrap;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 30px rgba(212,175,55,.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Quiero Paramount+ →</a>
+    </div>
+  </div>
 </section>
 
 <!-- ANGEOBET -->
@@ -791,7 +820,7 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
             <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/spotify/1ED760" alt="Spotify"></div><span class="plat-name">Spotify</span></div>
             <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="img/canvapro.png" alt="Canva Pro"></div><span class="plat-name">Canva Pro</span></div>
             <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/crunchyroll/F47521" alt="Crunchyroll"></div><span class="plat-name">Crunchyroll</span></div>
-            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/hbo/000000/ffffff" alt="Max HBO" style="background:#ffffff;border-radius:4px;padding:2px;"></div><span class="plat-name">Max HBO</span></div>
+            <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="img/maxhbo.png" alt="Max HBO"></div><span class="plat-name">Max HBO</span></div>
             <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple TV"></div><span class="plat-name">Apple TV</span></div>
             <div class="plat-item" onclick="openModal('streaming')"><div class="plat-logo"><img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube Premium"></div><span class="plat-name">YouTube Premium</span></div>
           </div>
@@ -915,6 +944,67 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGO DE SERVICIOS -->
+<section id="pago-servicios" style="background:var(--black);position:relative;z-index:1;overflow:hidden;">
+  <div style="position:absolute;inset:0;pointer-events:none;">
+    <div style="position:absolute;top:20%;left:5%;width:400px;height:400px;background:radial-gradient(circle,rgba(212,175,55,.04),transparent 65%);"></div>
+  </div>
+  <div class="wrap sec-pad">
+    <div class="rv" style="margin-bottom:48px;">
+      <span class="sl">Corresponsalía Bemovil</span>
+      <h2 class="sec-title" style="font-family:'Syne',sans-serif;letter-spacing:-1px;">Pago de Servicios</h2>
+      <div class="gd"></div>
+      <p class="sec-sub" style="max-width:560px;">Paga todos tus servicios básicos desde casa. Luz, agua, teléfono, internet y más — sin filas, sin complicaciones.</p>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:2px;">
+      <!-- Luz -->
+      <div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);padding:32px 24px;position:relative;overflow:hidden;transition:all .4s;cursor:default;" onmouseover="this.style.borderColor='rgba(212,175,55,.2)';this.style.background='rgba(212,175,55,.03)'" onmouseout="this.style.borderColor='rgba(255,255,255,.05)';this.style.background='rgba(255,255,255,.025)'">
+        <div style="width:48px;height:48px;border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border-radius:3px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:8px;letter-spacing:-.3px;">Planilla de Luz</h3>
+        <p style="font-size:.75rem;color:var(--gray);line-height:1.6;margin-bottom:14px;">CNEL, EEQ, EMELNORTE, CENTROSUR y más distribuidoras a nivel nacional.</p>
+        <button onclick="openModal('servicios_luz')" style="width:100%;background:transparent;border:1px solid rgba(212,175,55,.3);color:var(--gold);padding:9px;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:all .3s;border-radius:2px;" onmouseover="this.style.background='rgba(212,175,55,.08)'" onmouseout="this.style.background='transparent'">Pagar Luz</button>
+      </div>
+      <!-- Agua -->
+      <div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);padding:32px 24px;position:relative;overflow:hidden;transition:all .4s;cursor:default;" onmouseover="this.style.borderColor='rgba(212,175,55,.2)';this.style.background='rgba(212,175,55,.03)'" onmouseout="this.style.borderColor='rgba(255,255,255,.05)';this.style.background='rgba(255,255,255,.025)'">
+        <div style="width:48px;height:48px;border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border-radius:3px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:8px;letter-spacing:-.3px;">Agua Potable</h3>
+        <p style="font-size:.75rem;color:var(--gray);line-height:1.6;margin-bottom:14px;">EPMAPS (Quito), EMAPAG (Guayaquil), EMAPA y empresas municipales a nivel nacional.</p>
+        <button onclick="openModal('servicios_agua')" style="width:100%;background:transparent;border:1px solid rgba(212,175,55,.3);color:var(--gold);padding:9px;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:all .3s;border-radius:2px;" onmouseover="this.style.background='rgba(212,175,55,.08)'" onmouseout="this.style.background='transparent'">Pagar Agua</button>
+      </div>
+      <!-- CNT Internet -->
+      <div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);padding:32px 24px;position:relative;overflow:hidden;transition:all .4s;cursor:default;" onmouseover="this.style.borderColor='rgba(212,175,55,.2)';this.style.background='rgba(212,175,55,.03)'" onmouseout="this.style.borderColor='rgba(255,255,255,.05)';this.style.background='rgba(255,255,255,.025)'">
+        <div style="width:48px;height:48px;border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border-radius:3px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:8px;letter-spacing:-.3px;">CNT / Internet</h3>
+        <p style="font-size:.75rem;color:var(--gray);line-height:1.6;margin-bottom:14px;">Pago de factura CNT, teléfono fijo, internet y TV por cable a nivel nacional.</p>
+        <button onclick="openModal('servicios_cnt')" style="width:100%;background:transparent;border:1px solid rgba(212,175,55,.3);color:var(--gold);padding:9px;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:all .3s;border-radius:2px;" onmouseover="this.style.background='rgba(212,175,55,.08)'" onmouseout="this.style.background='transparent'">Pagar CNT</button>
+      </div>
+      <!-- SRI -->
+      <div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);padding:32px 24px;position:relative;overflow:hidden;transition:all .4s;cursor:default;" onmouseover="this.style.borderColor='rgba(212,175,55,.2)';this.style.background='rgba(212,175,55,.03)'" onmouseout="this.style.borderColor='rgba(255,255,255,.05)';this.style.background='rgba(255,255,255,.025)'">
+        <div style="width:48px;height:48px;border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border-radius:3px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:8px;letter-spacing:-.3px;">SRI / Impuestos</h3>
+        <p style="font-size:.75rem;color:var(--gray);line-height:1.6;margin-bottom:14px;">Pago de impuestos y obligaciones tributarias al Servicio de Rentas Internas del Ecuador.</p>
+        <button onclick="openModal('servicios_sri')" style="width:100%;background:transparent;border:1px solid rgba(212,175,55,.3);color:var(--gold);padding:9px;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:all .3s;border-radius:2px;" onmouseover="this.style.background='rgba(212,175,55,.08)'" onmouseout="this.style.background='transparent'">Pagar SRI</button>
+      </div>
+    </div>
+    <!-- CTA servicios -->
+    <div class="rv" style="background:linear-gradient(135deg,rgba(212,175,55,.05),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.12);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:5px;letter-spacing:-.3px;">¿Necesitas pagar otro servicio?</h3>
+        <p style="font-size:.78rem;color:var(--gray);">También procesamos pagos de telefonía, televisión por cable, internet y más.</p>
+      </div>
+      <a href="https://wa.me/593963114919?text=Hola%20Angeomovil,%20necesito%20pagar%20un%20servicio" target="_blank" class="btn-gold btn-sm">Consultar por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -1080,7 +1170,7 @@ footer{background:var(--black);border-top:1px solid rgba(212,175,55,.06);positio
       <div class="fc">
         <h4>Más Servicios</h4>
         <ul class="fll">
-          <li><a href="#bemovil">Bemovil</a></li><li><a href="#tec">Soporte Técnico</a></li>
+          <li><a href="#bemovil">Bemovil</a></li><li><a href="#pago-servicios">Pago Servicios</a></li><li><a href="#tec">Soporte Técnico</a></li>
           <li><a href="#cont">Contacto</a></li><li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -1278,6 +1368,35 @@ const MODALS={
 📞 *Número:* ${d.num}
 📡 *Operadora:* ${d.op}
 💰 *Monto:* ${d.plan}`},
+
+  servicios_luz:{title:'Pago Planilla de Luz',sub:'Procesamos tu pago de forma inmediata',fields:[
+    {id:'m-name',label:'Nombre',type:'text',placeholder:'Tu nombre'},
+    {id:'m-phone',label:'WhatsApp',type:'tel',placeholder:'+593 9X XXX XXXX'},
+    {id:'m-dist',label:'Distribuidora',type:'select',options:['CNEL','EEQ (Quito)','EMELNORTE','CENTROSUR','ELEPCO','Otra']},
+    {id:'m-cuenta',label:'Número de cuenta / medidor',type:'text',placeholder:'Número de cuenta'},
+    {id:'m-monto',label:'Monto a pagar (USD)',type:'text',placeholder:'Ej: $25.50'},
+  ],waMsg:(d)=>`⚡ *Pago Luz — Angeomovil*\n\n👤 ${d.name}\n📱 ${d.phone||'N/A'}\n🏢 *Distribuidora:* ${d.dist}\n🔢 *Cuenta:* ${d.cuenta}\n💵 *Monto:* ${d.monto||'N/A'}\n\n⚠️ Ten listo tu comprobante de pago.`},
+  servicios_agua:{title:'Pago Agua Potable',sub:'Procesamos tu pago de forma inmediata',fields:[
+    {id:'m-name',label:'Nombre',type:'text',placeholder:'Tu nombre'},
+    {id:'m-phone',label:'WhatsApp',type:'tel',placeholder:'+593 9X XXX XXXX'},
+    {id:'m-emp',label:'Empresa',type:'select',options:['EPMAPS (Quito)','EMAPAG (Guayaquil)','EMAPA','Otra']},
+    {id:'m-cuenta',label:'Número de cuenta / medidor',type:'text',placeholder:'Número de cuenta'},
+    {id:'m-monto',label:'Monto a pagar (USD)',type:'text',placeholder:'Ej: $12.00'},
+  ],waMsg:(d)=>`💧 *Pago Agua — Angeomovil*\n\n👤 ${d.name}\n📱 ${d.phone||'N/A'}\n🏢 *Empresa:* ${d.emp}\n🔢 *Cuenta:* ${d.cuenta}\n💵 *Monto:* ${d.monto||'N/A'}\n\n⚠️ Ten listo tu comprobante de pago.`},
+  servicios_cnt:{title:'Pago CNT / Internet',sub:'Procesamos tu pago de forma inmediata',fields:[
+    {id:'m-name',label:'Nombre',type:'text',placeholder:'Tu nombre'},
+    {id:'m-phone',label:'WhatsApp',type:'tel',placeholder:'+593 9X XXX XXXX'},
+    {id:'m-tipo',label:'Tipo de servicio',type:'select',options:['Internet CNT','Teléfono Fijo','TV Cable CNT','Paquete Completo']},
+    {id:'m-cuenta',label:'Número de cuenta / contrato',type:'text',placeholder:'Número de cuenta'},
+    {id:'m-monto',label:'Monto a pagar (USD)',type:'text',placeholder:'Ej: $35.00'},
+  ],waMsg:(d)=>`📱 *Pago CNT — Angeomovil*\n\n👤 ${d.name}\n📱 ${d.phone||'N/A'}\n📡 *Servicio:* ${d.tipo}\n🔢 *Cuenta:* ${d.cuenta}\n💵 *Monto:* ${d.monto||'N/A'}\n\n⚠️ Ten listo tu comprobante de pago.`},
+  servicios_sri:{title:'Pago SRI / Impuestos',sub:'Procesamos tu pago de forma inmediata',fields:[
+    {id:'m-name',label:'Nombre',type:'text',placeholder:'Tu nombre'},
+    {id:'m-phone',label:'WhatsApp',type:'tel',placeholder:'+593 9X XXX XXXX'},
+    {id:'m-ruc',label:'RUC / Cédula',type:'text',placeholder:'Tu número de RUC o cédula'},
+    {id:'m-tipo',label:'Tipo de pago',type:'select',options:['Impuesto a la Renta','IVA','Predial','Otro']},
+    {id:'m-monto',label:'Monto a pagar (USD)',type:'text',placeholder:'Ej: $150.00'},
+  ],waMsg:(d)=>`🏛️ *Pago SRI — Angeomovil*\n\n👤 ${d.name}\n📱 ${d.phone||'N/A'}\n🆔 *RUC/CI:* ${d.ruc}\n📋 *Tipo:* ${d.tipo}\n💵 *Monto:* ${d.monto||'N/A'}\n\n⚠️ Ten listo tu comprobante de pago.`},
   tecnico:{title:'Soporte Técnico',sub:'Agenda tu visita o envío',fields:[
     {id:'m-name',label:'Nombre',type:'text',placeholder:'Tu nombre'},
     {id:'m-phone',label:'WhatsApp',type:'tel',placeholder:'+593 9X XXX XXXX'},
