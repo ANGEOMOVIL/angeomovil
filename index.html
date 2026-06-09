@@ -1264,7 +1264,7 @@ async function fetchMatches(){
     // Fetch today's matches from multiple competitions
     const today = new Date().toISOString().split('T')[0];
     const promises = COMPETITIONS.map(id =>
-      fetch(`https://api.football-data.org/v4/competitions/${id}/matches?dateFrom=${today}&dateTo=${today}`, {
+      fetch(`/api/football`, {
         headers: {'X-Auth-Token': FOOTBALL_API_KEY}
       }).then(r => r.json()).catch(() => ({matches:[]}))
     );
